@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascript/jquery.parallax-scroll.js "></script>
+    <script src="javascript/jquery-1.12.3.js"></script>
+    <script src="javascript/parallaxscroll.js"></script>
+    <link rel="stylesheet"  href="/css/introduce.css" >
+    <style>
+  
+            #about { 
+            background: url(/images/holly-gcf7d209bd_1920.jpg) 50% 0 no-repeat; min-height: 1000px;  
+            }
+
+
+        
+            #about { 
+            background: url(/images/holly-gcf7d209bd_1920.jpg) 50% 0 repeat fixed; min-height: 1000px; 
+            height: 1000px; 
+            margin: 0 auto; 
+            width: 100%; 
+            max-width: 1920px; 
+            position: relative; 
+            -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            }
+            
+            #about article { 
+            height: 458px; 
+            position: absolute; 
+            text-align: center; 
+            top: 150px; 
+            width: 100%; 
+            }
+                </style>
+</head>
+<body>
+    <header>
+        <div class="hlist">
+            <ul>
+                <li>서울소식</li>
+                <li>시민참여</li>
+                <li>분야별 정보</li>
+                <li>부서안내</li>
+                <li>응답소</li>
+                <li>정보공개</li>
+            </ul>
+        </div>
+    </header>
+ 
+    <section id="about" data-type="background" data-speed="10">
+    </section>
+    <section id="home" data-type="background" data-speed="10" class="pages">     
+        <div class="content">
+        <div class="titlewrap">
+            <h3>찾아오시는길</h3>
+            <section class="loc_box loc_box_location">
+                <h2>시청 방문 안내사항</h2>
+                <div class="box-type2">
+                    <ul class="listtype-noti">
+                        <!-- <li>
+                             현재 시청 청사(부설주차장 포함)는 코로나19 확산 방지를 위해 업무상 용무가 없으신 분들의 출입을 제한하고 있습니다.
+                            <ul class="ul_txt_2">
+                                <li>업무상 용무가 없으신 분들은 주차정보안내시스템을 통해 인근 공영주차장을 확인하실 수 있습니다.
+                                    <a class="btn ml0 bg-point" href="http://parking.seoul.go.kr" target="_blank" title="서울특별시 주차정보안내시스템 사이트 바로가기">
+                                        <span>바로가기</span>
+                                    </a>
+                                </li> 
+                            </ul>
+                        </li> -->
+                        <li>
+                            민원서류 발급은 코로나19 감염 예방을 위하여 온라인 민원처리 시스템을 이용 해주시기 바랍니다.
+                            <ul class="ul_txt_2">
+                                <li>정부24
+                                    <a class="btn bg-point" href="https://www.gov.kr/portal/main" target="_blank"><span>바로가기</span></a>
+                                <!-- </li>  -->
+                                <li>우리동네 무인민원발급 설치장소 및 운영시간 안내
+                                    <a class="btn bg-point" href="https://www.gov.kr/mw/AA090NoManMinwonView.do" target="_blank">
+                                        <span>바로가기</span>
+                                    </a>
+                                </li> 
+                            </ul>
+                        </li>
+                        <li>
+                            방문 시에는 반드시 마스크를 착용해 주시고, 코로나19 방역수칙을 지켜주시기 바랍니다.
+                            <ul class="ul_txt_2">
+                                <li>코로나19 마스크 착용 준수 안내
+                                    <a class="btn bg-point" href="https://www.seoul.go.kr/coronaV/coronaStatus.do?menu_code=23" target="_blank">
+                                        <span>바로가기</span>
+                                    </a>
+                                </li> 
+                                <li>코로나19 방역수칙
+                                    <a class="btn bg-point" href="https://www.seoul.go.kr/coronaV/coronaStatus.do?menu_code=19" target="_blank">
+                                        <span>바로가기</span>
+                                    </a>
+                                </li> 
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                </section>
+        <article></article>
+   </section>   
+    
+    <section id="about" data-type="background" data-speed="10" class="pages">
+        <!-- 지도 삽입 -->
+        
+        <div id="map" style="width:1000px;height:700px;margin-left: 25%;"></div>
+        
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fe19576cc5d15283ea69fa2531b2797a"></script>
+        <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+        
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        
+        // 마커가 표시될 위치입니다 
+        var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+        
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+        
+        // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+        // marker.setMap(null);    
+        </script>
+        <br>
+        <br>
+ 
+        </div>
+            <article>Simple Parallax Scroll</article>
+    </section>
+
+<!-- 내용시작 -->
+
+
+
+
+
+
+</div>
+
+
+
+
+<footer>
+서울특별시청 04524 서울특별시 중구 세종대로 110 [찾아오시는 길]<br>
+
+대표전화: 02-120 또는 02-731-2120<br>
+
+© Seoul Metropolitan Government all rights reserved<br>
+</footer>
+</body>
+</html>
+
+
+</body>
+</html>
